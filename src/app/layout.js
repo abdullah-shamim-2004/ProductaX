@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Layouts/Navbar";
+import TanstackProvider from "@/providers/TanstackProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,12 +24,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="w-full  md:max-w-10/12 mx-auto">
+        <header className="w-full md:max-w-10/12 mx-auto">
           <Navbar></Navbar>
         </header>
-        <main className="w-full md:max-w-10/12 mx-auto min-h-[cal(100vh-300px)]">
-          {children}
-        </main>
+        <TanstackProvider>
+          <main className="w-full md:max-w-10/12 mx-auto min-h-[cal(100vh-300px)]">
+            {children}
+          </main>
+        </TanstackProvider>
       </body>
     </html>
   );

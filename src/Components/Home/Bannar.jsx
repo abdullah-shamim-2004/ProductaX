@@ -3,17 +3,16 @@ import { Button } from "../ui/button";
 
 const Bannar = () => {
   return (
-    <section className="relative  w-full min-h-[90vh] bg-background overflow-hidden border-y border-gray-100">
+    <section className="relative w-full md:max-w-10/12 min-h-[90vh] bg-background overflow-hidden border-y border-gray-100">
       {/* Background Decorative Elements (ইমেজের সেই ছোট ছোট আইকন ও ডটগুলোর জন্য) */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         {/* <div className="absolute top-10 left-10 w-20 h-20 border-4 border-dashed border-gray-800 rounded-full" /> */}
         <div className="absolute bottom-20 left-1/4 text-4xl">✏️</div>
         <div className="absolute top-1/2 left-10 text-4xl">💡</div>
         <div className="absolute top-20 right-1/3 text-4xl">🔍</div>
-       
       </div>
 
-      <div className="container border border-amber-800 min-h-[90vh] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 relative z-10 py-20">
+      <div className="container min-h-[90vh] w-full md:max-w-10/12 mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 relative z-10 py-20">
         {/* Left Content (Text Side) */}
         <div className="space-y-6">
           <div className="inline-block px-4 py-1 bg-gray-100 rounded-full">
@@ -65,7 +64,7 @@ const Bannar = () => {
           <div className="relative w-full max-w-md aspect-square overflow-hidden rounded-[30%_70%_70%_30%/_30%_30%_70%_70%] border-8 border-white shadow-2xl">
             {/* ইমেজ হিসেবে এখানে আপনার পছন্দমতো ছবি দিন */}
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop"
+              src="https://i.ibb.co.com/cSz6dQkG/i-Phone-16-Plus-16-Pink-9850.webp"
               alt="Designer"
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
             />
@@ -79,7 +78,6 @@ const Bannar = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };
