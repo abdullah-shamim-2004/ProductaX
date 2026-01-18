@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Layouts/Navbar";
 import TanstackProvider from "@/providers/TanstackProvider";
+import Footer from "@/Components/Layouts/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +29,13 @@ export default function RootLayout({ children }) {
           <Navbar></Navbar>
         </header>
         <TanstackProvider>
-          <main className="w-full md:max-w-10/12 mx-auto min-h-[cal(100vh-300px)]">
+          <main className="w-full md:max-w-10/12 mx-auto min-h-[90vh]">
             {children}
           </main>
         </TanstackProvider>
+        <div>
+          <Footer></Footer>
+        </div>
       </body>
     </html>
   );

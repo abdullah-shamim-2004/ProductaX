@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 ProductaX
 
-## Getting Started
+A high-performance, full-stack e-commerce product gallery built with **Next.js 14**, **MongoDB**, and **TanStack Query**. This project features a clean, responsive UI and a robust backend API for seamless data fetching.
 
-First, run the development server:
+---
+live Link  : [https://productax.vercel.app/]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Server-Side Rendering (SSR):** Optimized performance using Next.js App Router.
+* **Dynamic Product Routing:** Individual pages for every product using dynamic `[id]` segments.
+* **Efficient Data Fetching:** Implemented **TanStack Query (React Query)** for caching and state management.
+* **Modern UI/UX:** Responsive grid layout built with **Tailwind CSS**, featuring glassmorphism and hover animations.
+* **MongoDB Integration:** Real-time data storage and retrieval using **Mongoose**.
+* **API Routes:** Custom RESTful endpoints for fetching product collections and single items.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+* **Framework:** [Next.js](https://nextjs.org/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Database:** [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+* **ORM:** [Mongoose](https://mongoosejs.com/)
+* **State Management:** [TanStack Query (React Query)](https://tanstack.com/query/latest)
+* **HTTP Client:** [Axios](https://axios-http.com/)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Installation & Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
