@@ -1,5 +1,6 @@
 "use client";
 import { Menu, X, Sparkles } from "lucide-react";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -35,7 +36,7 @@ export default function Navbar() {
         <div className="mx-auto w-full md:max-w-10/12 px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo with animation */}
-            <a
+            <Link
               href="/"
               className="group flex items-center gap-2 text-2xl sm:text-3xl font-bold tracking-tight"
             >
@@ -48,7 +49,7 @@ export default function Navbar() {
                 </span>
                 <Sparkles className="absolute -top-1 -right-1 h-3 w-3 text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-1">
@@ -115,7 +116,7 @@ export default function Navbar() {
         <div className="flex flex-col h-full p-6">
           {/* Mobile Header */}
           <div className="flex items-center justify-between mb-8">
-            <a
+            <Link
               href="/"
               className="flex items-center gap-2 text-2xl font-bold"
               onClick={() => setIsOpen(false)}
@@ -124,7 +125,7 @@ export default function Navbar() {
                 Producta
               </span>
               <span className="text-blue-600 dark:text-blue-400">X</span>
-            </a>
+            </Link>
             <button
               onClick={() => setIsOpen(false)}
               className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"

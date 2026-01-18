@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductCard = ({ product }) => {
   return (
@@ -27,9 +28,12 @@ const ProductCard = ({ product }) => {
         <span className="text-xl font-bold text-blue-600">
           ${product.price}
         </span>
-        <button className="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-800">
+        <Link
+          href={`/products/${product._id}`}
+          className="bg-black text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-800"
+        >
           Details
-        </button>
+        </Link>
       </div>
     </div>
   );
