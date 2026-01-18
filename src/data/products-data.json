@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Wireless Headphones",
     "description": "High-quality over-ear wireless headphones with noise-cancellation.",
     "price": 99.99,
@@ -16,7 +15,6 @@
     "dimensions": "20x18x8"
   },
   {
-    "id": 2,
     "name": "Smart Watch",
     "description": "Waterproof smart watch with heart rate monitor and step tracking.",
     "price": 79.99,
@@ -32,7 +30,6 @@
     "dimensions": "4x4x1"
   },
   {
-    "id": 3,
     "name": "Leather Wallet",
     "description": "Genuine leather wallet with multiple card slots and coin pocket.",
     "price": 29.99,
@@ -48,7 +45,6 @@
     "dimensions": "12x9x2"
   },
   {
-    "id": 4,
     "name": "Running Shoes",
     "description": "Lightweight running shoes designed for comfort and durability.",
     "price": 59.99,
@@ -64,7 +60,6 @@
     "dimensions": "30x10x12"
   },
   {
-    "id": 5,
     "name": "Sunglasses",
     "description": "UV-protected stylish sunglasses suitable for all occasions.",
     "price": 19.99,
