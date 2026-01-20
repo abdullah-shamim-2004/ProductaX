@@ -1,5 +1,5 @@
 "use client";
-import ProductCard from "@/Components/Product/ProductCard";
+import ProductCard from "@/components/Product/ProductCard";
 import { useProducts } from "@/hooks/useProducts";
 import React from "react";
 
@@ -29,7 +29,7 @@ const ProductsPage = () => {
           No Products Found
         </h2>
         <p className="text-gray-500 mb-6">
-          We couldn't find any products in our database right now.
+          We do not find any products in our database right now.
         </p>
         <button
           onClick={() => window.location.reload()}

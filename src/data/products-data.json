@@ -75,7 +75,6 @@
     "dimensions": "15x5x5"
   },
   {
-    "id": 6,
     "name": "Bluetooth Speaker",
     "description": "Portable Bluetooth speaker with 10 hours of battery life.",
     "price": 49.99,
@@ -91,7 +90,6 @@
     "dimensions": "15x8x8"
   },
   {
-    "id": 7,
     "name": "Backpack",
     "description": "Durable backpack with multiple compartments for everyday use.",
     "price": 39.99,
@@ -107,7 +105,6 @@
     "dimensions": "40x30x15"
   },
   {
-    "id": 8,
     "name": "Fitness Tracker",
     "description": "Track your daily activity, sleep, and calories burned accurately.",
     "price": 59.99,
@@ -123,7 +120,6 @@
     "dimensions": "4x4x1"
   },
   {
-    "id": 9,
     "name": "Coffee Mug",
     "description": "Ceramic coffee mug with 350ml capacity, perfect for home or office.",
     "price": 9.99,
@@ -139,7 +135,6 @@
     "dimensions": "10x8x8"
   },
   {
-    "id": 10,
     "name": "Desk Lamp",
     "description": "LED desk lamp with adjustable brightness and flexible neck.",
     "price": 24.99,

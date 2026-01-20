@@ -67,7 +67,9 @@ export default function Navbar() {
               <div className="h-6 w-px bg-gradient-to-b from-transparent via-gray-300 dark:via-gray-700 to-transparent mx-3" />
 
               <button className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 text-sm font-medium rounded-full shadow-lg shadow-blue-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105">
-                <span className="relative z-10">Login</span>
+                <Link href={"/login"} className="relative z-10">
+                  Login
+                </Link>
               </button>
             </nav>
 
@@ -158,12 +160,13 @@ export default function Navbar() {
 
           {/* Mobile CTA */}
           <div className="pt-6 border-t border-gray-200 dark:border-gray-800">
-            <button
+            <Link
+              href={"/login"}
               className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 text-lg font-semibold rounded-xl shadow-lg shadow-blue-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/40"
               onClick={() => setIsOpen(false)}
             >
               Login
-            </button>
+            </Link>
           </div>
         </div>
       </div>
