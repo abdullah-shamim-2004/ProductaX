@@ -20,12 +20,17 @@ const USerSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, "you have to fill up password."],
-      minlength: [6, "the password should be at least 6 charecter."],
-      // match: [
-      //   /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      //   "please enter your password.",
-      // ],
+      required: [true, "Password is required."],
+      minlength: [8, "Password must be at least 8 characters long."],
+      select: false, // ডিফল্টভাবে ডাটাবেস কোয়েরিতে পাসওয়ার্ড আসবে না (নিরাপত্তার জন্য)
+      validate: {
+        validator: function (value) {
+          // অন্তত ১টি বড় হাতের অক্ষর, ১টি ছোট হাতের অক্ষর এবং ১টি সংখ্যা থাকতে হবে
+          return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value);
+        },
+        message:
+          "Password must contain at least one uppercase letter, one lowercase letter, and one number.",
+      },
     },
 
     role: {
@@ -36,7 +41,7 @@ const USerSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 USerSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
