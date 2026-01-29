@@ -3,7 +3,7 @@
 A high-performance, full-stack e-commerce product gallery built with **Next.js 14**, **MongoDB**, and **TanStack Query**. This project features a clean, responsive UI and a robust backend API for seamless data fetching.
 
 ---
-live Link  : [https://productax.vercel.app/]
+[live Link ](https://productax.vercel.app/)
 
 ## 🚀 Features
 

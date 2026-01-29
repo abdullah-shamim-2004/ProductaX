@@ -70,7 +70,7 @@ const RegisterForm = () => {
                   <FormItem>
                     <FormLabel>Full Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Shamim Patwary" {...field} />
+                      <Input placeholder="Enter your full name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -161,7 +161,7 @@ const RegisterForm = () => {
             Already have an account?{" "}
             <Link
               href="/login"
-              className="font-semibold text-indigo-600 hover:underline"
+              className="font-semibold text-blue-600 hover:underline"
             >
               Login
             </Link>
