@@ -23,8 +23,14 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    // setLoading(true);
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    console.log(email, password);
+
     // Add your login logic here (e.g., NextAuth signIn)
+
     // setTimeout(() => setLoading(false), 2000); // For testing
   };
 

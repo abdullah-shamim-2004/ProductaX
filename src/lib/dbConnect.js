@@ -2,12 +2,13 @@ import mongoose from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
+// If mongo uri is not found then it will throw an error
 if (!MONGODB_URI) {
   throw new Error(
     "Please define the MONGODB_URI environment variable inside .env.local",
   );
 }
-
+// From global veriable of node , we bring mongoose cached to avoid 
 let cached = global.mongoose;
 
 if (!cached) {

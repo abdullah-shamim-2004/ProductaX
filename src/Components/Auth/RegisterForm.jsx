@@ -25,6 +25,8 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 const RegisterForm = () => {
   //   const router = useRouter();
@@ -43,11 +45,22 @@ const RegisterForm = () => {
 
   const onSubmit = async (data) => {
     // Implement your registration logic here
-    console.log(data);
+    try {
+      const response = await axios.post("/api/register", data);
+      if (response.status === 200) {
+        toast("Registration successful");
+      }
+    } catch (error) {
+      const errorMessage =
+        error.response?.data?.message ||
+        "Threre is an error in register, please try again.";
+      console.log(errorMessage);
+    }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4 py-12">
+      <ToastContainer></ToastContainer>
       <Card className="w-full max-w-md shadow-2xl border-slate-200">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-3xl font-extrabold tracking-tight">

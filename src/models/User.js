@@ -16,16 +16,15 @@ const USerSchema = new mongoose.Schema(
       match: [
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
         "please enter your email.",
-      ],
+      ], 
     },
     password: {
       type: String,
       required: [true, "Password is required."],
       minlength: [8, "Password must be at least 8 characters long."],
-      select: false, // ডিফল্টভাবে ডাটাবেস কোয়েরিতে পাসওয়ার্ড আসবে না (নিরাপত্তার জন্য)
+      select: false,
       validate: {
         validator: function (value) {
-          // অন্তত ১টি বড় হাতের অক্ষর, ১টি ছোট হাতের অক্ষর এবং ১টি সংখ্যা থাকতে হবে
           return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(value);
         },
         message:
@@ -58,4 +57,4 @@ USerSchema.pre("save", async function (next) {
 USerSchema.methods.comparePassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
-const User = mongoose.models.User || mongoose.model("User", USerSchema);
+export const User = mongoose.models.User || mongoose.model("User", USerSchema);
