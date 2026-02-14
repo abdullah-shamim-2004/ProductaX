@@ -4,27 +4,11 @@ import { useProducts } from "@/hooks/useProducts";
 import React from "react";
 
 const ProductsPage = () => {
-  const { data: products, isLoading, isError } = useProducts();
-
-  //   if (isLoading) {
-  //     return (
-  //       <div className="container mx-auto p-10 mt-20">
-  //         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-  //           {[...Array(8)].map((_, i) => (
-  //             <div
-  //               key={i}
-  //               className="h-72 bg-gray-100 animate-pulse rounded-2xl"
-  //             />
-  //           ))}
-  //         </div>
-  //       </div>
-  //     );
-  //   }
+  const { data: products, isError } = useProducts();
 
   if (isError || !products || products.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-        <div className="bg-gray-50 p-10 rounded-full mb-4">📦</div>
         <h2 className="text-2xl font-semibold text-gray-700">
           No Products Found
         </h2>

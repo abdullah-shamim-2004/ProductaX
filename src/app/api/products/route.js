@@ -6,7 +6,7 @@ export async function GET() {
   try {
     await connectDB();
 
-    // ২. 'products.find()' এর বদলে 'Product.find()' হবে (আপনার মডেলের নাম অনুযায়ী)
+    // Find the Product
     const allproducts = await Product.find();
 
     return NextResponse.json(allproducts, { status: 200 });

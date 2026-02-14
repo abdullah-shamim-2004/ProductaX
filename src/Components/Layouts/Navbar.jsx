@@ -1,7 +1,8 @@
 "use client";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles, ShoppingCart, Pointer } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import LoginBtn from "../LoginBtn/LoginBtn";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,7 @@ export default function Navbar() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
           isScrolled
             ? "bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-800/50 py-3 shadow-lg"
-            : "bg-transparent border-b border-transparent py-6"
+            : "bg-transparent border-b border-transparent py-6",
         )}
       >
         <div className="mx-auto w-full md:max-w-10/12 px-4 sm:px-6 lg:px-8">
@@ -65,12 +66,12 @@ export default function Navbar() {
               ))}
 
               <div className="h-6 w-px bg-gradient-to-b from-transparent via-gray-300 dark:via-gray-700 to-transparent mx-3" />
-
-              <button className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-2 text-sm font-medium rounded-full shadow-lg shadow-blue-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105">
-                <Link href={"/login"} className="relative z-10">
-                  Login
-                </Link>
-              </button>
+              <div className="flex justify-center items-center gap-2.5">
+                {/* Cart button */}
+                <ShoppingCart size={25} cursor="Pointer" />
+                {/* Login button */}
+                <LoginBtn />
+              </div>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -83,7 +84,7 @@ export default function Navbar() {
                   "h-6 w-6 transition-all duration-300",
                   isOpen
                     ? "rotate-90 opacity-0 absolute"
-                    : "rotate-0 opacity-100"
+                    : "rotate-0 opacity-100",
                 )}
               />
               <X
@@ -91,7 +92,7 @@ export default function Navbar() {
                   "h-6 w-6 transition-all duration-300",
                   isOpen
                     ? "rotate-0 opacity-100"
-                    : "-rotate-90 opacity-0 absolute"
+                    : "-rotate-90 opacity-0 absolute",
                 )}
               />
             </button>
@@ -103,7 +104,7 @@ export default function Navbar() {
       <div
         className={cn(
           "fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300",
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          isOpen ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
         onClick={() => setIsOpen(false)}
       />
@@ -112,12 +113,13 @@ export default function Navbar() {
       <div
         className={cn(
           "fixed top-0 right-0 bottom-0 w-[85vw] sm:w-[400px] bg-white dark:bg-slate-900 z-50 md:hidden transition-transform duration-300 ease-out shadow-2xl",
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
         <div className="flex flex-col h-full p-6">
           {/* Mobile Header */}
           <div className="flex items-center justify-between mb-8">
+            {/* logo of in sidebar */}
             <Link
               href="/"
               className="flex items-center gap-2 text-2xl font-bold"
@@ -128,6 +130,7 @@ export default function Navbar() {
               </span>
               <span className="text-blue-600 dark:text-blue-400">X</span>
             </Link>
+            {/* Cross button */}
             <button
               onClick={() => setIsOpen(false)}
               className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
@@ -140,7 +143,7 @@ export default function Navbar() {
           <nav className="flex flex-col gap-2 flex-1">
             {navLinks.map((link, index) => (
               <a
-                key={link.href}
+                key={index}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="group relative px-4 py-4 text-lg font-semibold text-gray-700 dark:text-gray-300 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
@@ -159,14 +162,13 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile CTA */}
-          <div className="pt-6 border-t border-gray-200 dark:border-gray-800">
-            <Link
-              href={"/login"}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-4 text-lg font-semibold rounded-xl shadow-lg shadow-blue-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/40"
-              onClick={() => setIsOpen(false)}
-            >
-              Login
-            </Link>
+          <div className="pt-6 border-t flex justify-start items-start border-gray-200 dark:border-gray-800">
+            <div className="flex justify-center items-center gap-2.5">
+              {/* Login Button */}
+              <LoginBtn onClick={() => setIsOpen(false)} />
+              {/* Add to cart  */}
+              <ShoppingCart />
+            </div>
           </div>
         </div>
       </div>

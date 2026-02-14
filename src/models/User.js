@@ -16,7 +16,7 @@ const USerSchema = new mongoose.Schema(
       match: [
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
         "please enter your email.",
-      ], 
+      ],
     },
     password: {
       type: String,
@@ -57,4 +57,5 @@ USerSchema.pre("save", async function (next) {
 USerSchema.methods.comparePassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
-export const User = mongoose.models.User || mongoose.model("User", USerSchema);
+const User = mongoose.models.User || mongoose.model("User", USerSchema);
+export default User;

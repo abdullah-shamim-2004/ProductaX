@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,7 +28,20 @@ const LoginForm = () => {
     const formData = new FormData(e.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
-    console.log(email, password);
+    // signIn ফাংশন কল করা
+    const result = await signIn("credentials", {
+      email: email,
+      password: password,
+      redirect: false, // যাতে পেজ রিলোড না হয়ে আমরা রেজাল্ট চেক করতে পারি
+    });
+
+    if (result?.error) {
+      console.log("লগইন ব্যর্থ:", result.error);
+      alert("ভুল ইমেইল বা পাসওয়ার্ড!");
+    } else {
+      console.log("লগইন সফল!");
+      router.push("/"); 
+    }
 
     // Add your login logic here (e.g., NextAuth signIn)
 
