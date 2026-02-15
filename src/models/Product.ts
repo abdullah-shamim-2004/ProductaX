@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+// Create a product schema 
 const ProductSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -18,11 +18,11 @@ const ProductSchema = new mongoose.Schema(
   },
   { 
     timestamps: true,
-    collection: 'products' // আপনার ডাটাবেসের কালেকশন নাম নিশ্চিত করতে এটি যোগ করা হয়েছে
+    collection: 'products' // to conferm collection name 
   }
 );
 
-// মডেলটি তৈরি করা বা এক্সিসটিং মডেল ব্যবহার করা
+// create a new model or use existing model
 const Product = mongoose.models.Product || mongoose.model("Product", ProductSchema);
 
 export default Product;

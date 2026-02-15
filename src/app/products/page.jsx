@@ -1,12 +1,22 @@
-"use client";
 import ProductCard from "@/components/Product/ProductCard";
-import { useProducts } from "@/hooks/useProducts";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import { error, log } from "console";
+// import { useProducts } from "@/hooks/useProducts";
 import React from "react";
+async function getProducts(params) {
+  const res = await fetch("http://localhost:3000/api/products");
+  if (!res.ok) {
+    throw new Error("Failed to fetch data!");
+  }
+  return res.json();
+}
 
-const ProductsPage = () => {
-  const { data: products, isError } = useProducts();
+const ProductsPage = async () => {
+  // const { data: products, isError } = useProducts();
+  const products = await getProducts();
+  console.log(products);
 
-  if (isError || !products || products.length === 0) {
+  if (!products || products.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
         <h2 className="text-2xl font-semibold text-gray-700">
@@ -29,15 +39,21 @@ const ProductsPage = () => {
     <main className="bg-[#F8FAFC] min-h-screen pt-28 pb-20 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <header className="mb-12">
-          <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
-            Premium Collection
-          </h1>
-          <div className="flex items-center gap-2">
-            <span className="h-1 w-12 bg-indigo-600 rounded-full"></span>
-            <p className="text-slate-500 font-medium">
-              Showing {products.length} exclusive items
-            </p>
+        <header className="mb-12 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
+              Premium Collection
+            </h1>
+            <div className="flex items-center gap-2">
+              <span className="h-1 w-12 bg-indigo-600 rounded-full"></span>
+              <p className="text-slate-500 font-medium">
+                Showing {products?.length} exclusive items
+              </p>
+            </div>
+          </div>
+          {/* Search and filter section */}
+          <div>
+            <SearchBar />
           </div>
         </header>
 

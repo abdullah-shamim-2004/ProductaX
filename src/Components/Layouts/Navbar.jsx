@@ -2,7 +2,9 @@
 import { Menu, X, Sparkles, ShoppingCart, Pointer } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import LoginBtn from "../LoginBtn/LoginBtn";
+import LoginBtn from "../Button/LoginBtn/LoginBtn";
+import CartBtn from "../Button/CartBtn/CartBtn";
+// import LoginBtn from "../Button/LoginBtn/LoginBtn";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,7 +70,7 @@ export default function Navbar() {
               <div className="h-6 w-px bg-gradient-to-b from-transparent via-gray-300 dark:via-gray-700 to-transparent mx-3" />
               <div className="flex justify-center items-center gap-2.5">
                 {/* Cart button */}
-                <ShoppingCart size={25} cursor="Pointer" />
+                <CartBtn />
                 {/* Login button */}
                 <LoginBtn />
               </div>
@@ -167,7 +169,7 @@ export default function Navbar() {
               {/* Login Button */}
               <LoginBtn onClick={() => setIsOpen(false)} />
               {/* Add to cart  */}
-              <ShoppingCart />
+              <CartBtn />
             </div>
           </div>
         </div>
