@@ -10,6 +10,7 @@ const ProductCard = ({ product }) => {
             src={product.image}
             alt={product.name}
             fill
+            sizes="h-48"
             className="object-contain rounded-md"
           />
         </div>

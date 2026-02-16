@@ -14,7 +14,7 @@ async function getProducts(params) {
 const ProductsPage = async () => {
   // const { data: products, isError } = useProducts();
   const products = await getProducts();
-  console.log(products);
+  // console.log(products);
 
   if (!products || products.length === 0) {
     return (
@@ -39,8 +39,8 @@ const ProductsPage = async () => {
     <main className="bg-[#F8FAFC] min-h-screen pt-28 pb-20 px-4 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <header className="mb-12 flex items-center justify-between">
-          <div>
+        <header className="mb-12 flex items-center justify-center md:justify-between">
+          <div className=" hidden md:block lg:block">
             <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
               Premium Collection
             </h1>
